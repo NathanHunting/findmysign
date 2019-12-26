@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     val PERMISSION_CODE = 1000
     private val IMAGE_CAPTURE_CODE = 1001
     var imageuri: Uri? = null
+    var yourmamma: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

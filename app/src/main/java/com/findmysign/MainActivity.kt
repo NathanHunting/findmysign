@@ -1,5 +1,6 @@
 package com.findmysign
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ContentValues
 import android.content.Intent
@@ -79,6 +80,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("RestrictedApi")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (resultCode == Activity.RESULT_OK) {
             image_view.setImageURI(imageuri)
@@ -88,10 +90,14 @@ class MainActivity : AppCompatActivity() {
                     val uri = imageuri!!
                     val stream = contentResolver.openInputStream(uri)
                     val exif = ExifInterface(stream!!)
-                    exif_txt.text = exif.latLong!![0].toString()
+                    lat_txt.text = exif.latLong!![0].toString()
+                    lon_txt.text = exif.latLong!![1].toString()
+                    date_txt.text = exif.dateTime!!.toString()
                 }
             } catch (ex: Exception) {
-                exif_txt.text = ex.message
+                lat_txt.text = ex.message
+                lon_txt.text = ex.message
+                date_txt.text = ex.message
             }
 
             //exif_txt.text = exif.toString()

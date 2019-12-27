@@ -28,10 +28,25 @@
         android:text="Upload To Cloud" />
 
     <TextView
-        android:id="@+id/exif_txt"
+        android:id="@+id/lat_txt"
         android:layout_width="350sp"
-        android:layout_height="match_parent"
-        android:text=""
+        android:layout_height="wrap_content"
+        android:text="1"
         android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/lon_txt"
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/date_txt"
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textSize="20sp" />
+
 
 </LinearLayout>
